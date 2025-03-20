@@ -9,12 +9,19 @@
 ## How to Setup the project locally
 
 1. Create Virtual Environment
-   Change directory in the root of the project (same directory with README.MD). And run this command in terminal to create virtual enviroment.
+   Change directory in the root of the folder (same directory with README.MD). And run this command in terminal to create virtual enviroment.
+   <br>
+   For Windows
    ```
     python -m venv venv
    ```
+   For Mac/Linux
+   ```
+    python3 -m venv venv
+   ```
 
 2. Activate Virtual Environment
+   <br>
    For Windows
    ```
     source venv\Scripts\activate
@@ -28,25 +35,61 @@
    ```
    pip install -r requirements.txt
    ```
-4. Run migration (skip this step if db.sqlite3 already exist in project folder)
+
+4. Change directory to the project folder
+   <br>
+   Make sure you're in the same directory as `manage.py`:
+   ```
+   cd inventory_project
+   ```
+
+5. Run migration (skip this step if db.sqlite3 already exist in project folder and schema already set up)
+   <br>
+   For Windows
    ```
    python manage.py migrate
    ```
+   For Mac/Linux
+   ```
+   python3 manage.py migrate
+   ```
 
-5. Run seeder (skip this step if db.sqlite3 already exist in project folder)
-   This will populate the database with some data and create super user.
-    ```
+6. Run seeder (skip this step if db.sqlite3 already populated with seed data)
+   This will populate the database with sample inventory data and create a superuser for admin access.
+   <br>
+   For Windows
+   ```
       python manage.py seed_inventory
-    ```
-6. Run development server
+   ```
+   For Mac/Linux
+   ```
+      python3 manage.py seed_inventory
+   ```
+
+7. Run development server
+   <br>
+   For Windows
    ```
    python manage.py runserver
    ```
-7. Run test (need to run while the development server running)
-   Open new terminal and activate the virtual enviroment as in step 2. Then run test command:
+   For Mac/Linux
+   ```
+   python3 manage.py runserver
+   ```
+
+8. Run test
+   <br>
+   You can run tests without starting the development server.
+   <br>
+   For Windows
    ```
    python manage.py test
    ```
+   For Mac/Linux
+   ```
+   python3 manage.py test
+   ```
+
 
 ## Super User Credential
    ```
