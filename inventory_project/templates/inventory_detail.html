@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} Inventory Details {% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <div>
+            {% load static %}
+            <img src="{% get_media_prefix %}thumbnail.jpg" alt="thumbnail-image" class="img-fluid rounded mx-auto d-block" style="max-width: 100%; height: auto;">
+            <h2 class="text-center">{{ inventory.name }}</h2>
+            <p><strong>Item ID:</strong> {{ inventory.id }}</p>
+            <p><strong>Description:</strong> {{ inventory.description }}</p>
+            <p><strong>Note:</strong> {{ inventory.note }}</p>
+            <p><strong>Stock:</strong> {{ inventory.stock }}</p>
+            <p><strong>Supplier:</strong> {{ inventory.supplier }}</p>
+            <p><strong>Availability:</strong> {{ inventory.availability|yesno:"Available,Not Available" }}</p>
+            <a href="javascript:window.history.back();" class="btn btn-primary">Back to List</a>
+        </div>
+        <p class="text-center text-muted mt-3">
+            <small>Photo by eniko kis on Unsplash</small>
+        </p>
+    </div>
+{% endblock %}

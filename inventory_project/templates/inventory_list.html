@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %} Inventory's List{% endblock %}
+
+{% block content %}
+    <div class="text-center">
+        <h2>Inventory List</h2>
+        <table class="table table-borderless table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Supplier</th>
+                    <th>Availability</th>
+                </tr>
+            </thead>
+            <tbody> 
+                {% for item in inventories %}
+                <tr onclick="window.location='{% url 'inventory-detail' item.id %}';" style="cursor: pointer;">
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.supplier_name }}</td>
+                    <td>{{ item.availability|yesno:"Available,Not Available" }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>  
+        </table>
+    </div>
+{% endblock %}
