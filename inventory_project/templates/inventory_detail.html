@@ -5,7 +5,7 @@
     <div class="container mt-4">
         <div>
             {% load static %}
-            <img src="{% get_media_prefix %}thumbnail.jpg" alt="thumbnail-image" class="img-fluid rounded mx-auto d-block" style="max-width: 100%; height: auto;">
+            <img src="{% static 'img/thumbnail.jpg' %}" alt="thumbnail-image" class="img-fluid rounded mx-auto d-block" style="max-width: 100%; height: auto;">
             <h2 class="text-center">{{ inventory.name }}</h2>
             <p><strong>Item ID:</strong> {{ inventory.id }}</p>
             <p><strong>Description:</strong> {{ inventory.description }}</p>
