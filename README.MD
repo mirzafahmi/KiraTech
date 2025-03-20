@@ -25,11 +25,11 @@
    <br>
    For Windows
    ```
-    source venv\Scripts\activate
+   venv\Scripts\activate
    ```
    For Mac/Linux
    ```
-    source venv/bin/activate
+   source venv/bin/activate
    ```
 3. Install Dependencies:
    <br>
